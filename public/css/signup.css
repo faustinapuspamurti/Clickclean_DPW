@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600&display=swap');
+
+body{
+	font-family: Nunito Sans;
+	color: #063667;
+	background: #E2EAF2;
+}
+ 
+.logo {
+    cursor: pointer;
+    width: 220px;
+    height: 75px;
+	padding-left: 335px; 
+}
+ 
+.kotak_login{
+	width: 900px;
+	background: white;
+	margin: 80px auto;
+	padding: 30px 80px;
+}
+
+label{
+	font-size: 12pt;
+	font-family: Nunito Sans;
+	font-weight: bold;
+}
+
+.container-grd{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.container-grd .box{
+    position: relative;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 20px;
+}
+ 
+.form_login{
+	box-sizing : border-box;
+	width: 100%;
+	padding: 10px 10px;
+	font-size: 12pt;
+	margin-bottom: 20px;
+	font-family: Nunito Sans;
+}
+ 
+.tombol_login{
+	background: #FEDF2D;
+	color: black;
+	font-size: 11pt;
+	width: 40%;
+	height: 50px;
+	border: none;
+	border-radius: 3px;
+	padding: 12px 25px;
+	font-family: Nunito Sans;
+	font-weight: bold;
+	margin-left: 270px;
+}

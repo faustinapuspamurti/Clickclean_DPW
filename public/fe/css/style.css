@@ -1,0 +1,222 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #414a4c;
+}
+
+a {
+    text-decoration: none;
+}
+
+.shadow-nih {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-20 {
+    border-radius: 20px;
+}
+
+.sticky {
+    position: sticky;
+    top: 10px;
+}
+
+/* navbar style */
+.navbar {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.mx-auto .nav-item {
+    margin-right: 25px;
+}
+
+/* header style */
+.carousel-item img {
+    border-radius: 20px;
+}
+
+/* button */
+.navbar .btn-primary {
+    width: 148px;
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #0ba6ff;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+/* product style */
+
+.product {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.title p {
+    margin-bottom: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.title h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #414a4c;
+}
+
+.product .lihat {
+    width: 200px;
+    height: 50px;
+}
+
+#list-product {
+    margin-top: 20px;
+}
+
+#list-product .card {
+    margin-top: 20px;
+}
+
+.topic .beli {
+    border-radius: 15px;
+    width: 120px;
+    padding-top: 10px;
+}
+
+.topic h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.harga small {
+    margin-bottom: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.harga p {
+    margin-top: -3px;
+    margin-bottom: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.image {
+    width: 100%;
+    height: 200px;
+    z-index: 0;
+}
+
+.image .bg {
+    background-color: #0ba6ff;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-top: 21px;
+    margin-left: 63px;
+    z-index: 1;
+    position: absolute;
+}
+
+.bg:hover {
+    background-color: #414a4c;
+}
+
+.image img {
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 32px;
+    width: 211px;
+    z-index: 999;
+}
+
+
+
+/* =================== detail page =================================== */
+
+.detail {
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.detail .card {
+    margin-top: 20px;
+}
+
+.image-detail {
+    width: 100%;
+    height: 300px;
+    z-index: 0;
+}
+
+.image-detail .bg {
+    background-color: #0ba6ff;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin-top: 21px;
+    margin-left: 63px;
+    z-index: 1;
+    position: absolute;
+}
+
+.image-detail img {
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 32px;
+    width: 350px;
+    z-index: 999;
+}
+
+.detail h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.detail h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.btn-cart {
+    height: 50px;
+}
+
+.review {
+    margin-bottom: 50px;
+}
+
+#testimoni {
+    margin-top: 30px;
+}
+
+.penjual {
+    margin-left: 10px;
+}
+
+.penjual h4 {
+    margin-bottom: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+#testimoni .card {
+    margin-top: 20px;
+}
