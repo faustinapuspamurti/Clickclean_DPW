@@ -73,8 +73,7 @@ class ProductController extends Controller
             'harga' => $request->harga,
             'image' => $imageName,
             'status' => $request->status,
-            'desc' => $request->desc,
-            'slug' => str_replace(' ', '-', $request->title)
+            'desc' => $request->desc
         ]);
         # akhir query
 
@@ -164,8 +163,7 @@ class ProductController extends Controller
                 'harga' => $request->harga,
                 'status' => $request->status,
                 'image' => $imageName,
-                'desc' =>  $request->desc,
-                'slug' => str_replace(' ', '-', $request->title)
+                'desc' =>  $request->desc
             ]);
             # akhir query
 

@@ -12,25 +12,25 @@
                 <div class="box2">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li class="footer-list"><a href="link-to-tentang-kami">Tentang Kami</a></li>
+                        <li class="footer-list"><a href="{{ route('aboutus') }}">Tentang Kami</a></li>
                         <br>
-                        <li class="footer-list"><a href="link-to-layanan">Product</a></li>
+                        <li class="footer-list"><a href="{{ route('product') }}">Product</a></li>
                         <br>
-                        <li class="footer-list"><a href="link-to-paket-harga">Paket Harga</a></li>
+                        <li class="footer-list"><a href="{{ route('booking') }}">Booking</a></li>
                         <br>
-                        <li class="footer-list"><a href="link-to-contact-us">Contact Us</a></li>
+                        <li class="footer-list"><a href="{{ route('contact') }}">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="box3">
                     <h3>Layanan</h3>
                     <ul>
-                        <li class="footer-list"><a href="link-to-layanan-rumah">Layanan Rumah</a></li>
+                        <li class="footer-list"><a href="{{ route('servicedetails') }}">Layanan Rumah</a></li>
                         <br>
-                        <li class="footer-list"><a href="link-to-layanan-kantor">Layanan Kantor</a></li>
+                        <li class="footer-list"><a href="{{ route('servicedetails') }}">Layanan Kantor</a></li>
                         <br>
-                        <li class="footer-list"><a href="link-to-layanan-industri">Layanan Industri</a></li>
+                        <li class="footer-list"><a href="{{ route('servicedetails') }}">Layanan Industri</a></li>
                         <br>
-                        <li class="footer-list"><a href="link-to-layanan-ac">Layanan AC</a></li>
+                        <li class="footer-list"><a href="{{ route('servicedetails') }}">Layanan AC</a></li>
                  </ul>
                 </div>
              <div class="box">

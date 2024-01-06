@@ -119,7 +119,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>2023 &copy; DPW FTA</p>
+                        <p>2023 &copy; Clickclean Kelompok 2 </p>
                     </div>
                 </div>
             </footer>

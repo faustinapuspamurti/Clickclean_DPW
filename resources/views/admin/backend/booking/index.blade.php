@@ -1,6 +1,6 @@
 @extends('layouts.backend.master')
 @section('title')
-    Daftar Product
+    Data Pemesanan Layanan
 @endsection
 
 @section('content')
@@ -13,19 +13,9 @@
                 <div class="card-body">
                     <form action="" method="GET">
                         <div class="row g-3 align-items-center">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <label for="cari" class="form-label">Cari Kata Kunci</label>
                                 <input type="text" name="cari" class="form-control" autocomplete="off" id="cari">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="basicSelect" class="form-label">Status Order</label>
-                                <select class="form-control" autocomplete="off" id="basicSelect" name="status">
-                                    <option value="">-- Pilih --</option>
-                                    <option {{ old('status') == 'publish' ? 'selected' : '' }} value="publish">
-                                        Publish</option>
-                                    <option {{ old('status') == 'draft' ? 'selected' : '' }} value="draft">Draft
-                                    </option>
-                                </select>
                             </div>
                             <div class="col-md-3">
                                 <div class="mt-4">
@@ -45,34 +35,38 @@
                             <thead>
                                 <tr>
                                     <th>NO</th>
-                                    <th>NAME</th>
-                                    <th>PRICE</th>
-                                    <th>STATUS</th>
-                                    <th>ACTION</th>
-
+                                    <th>NAMA</th>
+                                    <th>PAKET</th>
+                                    <th>PEMBAYARAN</th>
+                                    <th>NO HP</th>
+                                    <th>ALAMAT</th>
+                                    {{-- <th>ACTION</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data as $item)
+                            @foreach ($booking as $item)
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
-                                        <td class="text-bold-500">{{ $item->title }}</td>
-                                        <td>Rp. {{ number_format($item->harga) }}</td>
+                                        <td class="text-bold-500">{{ $item->nama }}</td>
                                         <td>
                                             <span
-                                                class="badge {{ $item->status == 'publish' ? 'bg-success' : 'bg-danger' }}">{{ $item->status }}</span>
+                                                class="badge {{ $item->paket_layanan == 'Paket Super','Paket Standar' ? 'bg-success' : 'bg-danger' }}">{{ $item->paket_layanan }}</span>
                                         </td>
+                                        <td>
+                                            <span
+                                                class="badge {{ $item->metode_pembayaran == 'Transfer Bank' ? 'bg-success' : 'bg-danger' }}">{{ $item->metode_pembayaran }}</span>
+                                        </td>
+                                        <td class="text-bold-500">{{ $item->no_hp }}</td>
+                                        <td class="text-bold-500">{{ $item->alamat }}</td>
                                         <td class="text-bold-500 d-flex">
-                                            <a href="{{ route('product.edit', $item->id) }}"
-                                                class="btn icon btn-primary me-2"><i class="bi bi-pencil"></i></a>
-                                            <form action="{{ route('product.destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route('booking.destroy', $item->id) }}" method="POST">
                                                 @csrf @method('DELETE')
                                                 <button type="submit" class="btn icon btn-danger"><i
                                                         class="bi bi-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endforeach  
                             </tbody>
                         </table>
                     </div>

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->enum('paket_layanan', ['Paket Dasar', 'Paket Standar', 'Paket Super']);
             $table->enum('metode_pembayaran', ['Tunai / Langsung', 'Transfer Bank', 'Kartu Kredit', 'Direct Debit']);
             $table->string('no_hp');
-            $table->text('alamat');
+            $table->string('alamat');
             $table->timestamps();
         });
     }

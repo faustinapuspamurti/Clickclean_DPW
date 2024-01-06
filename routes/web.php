@@ -33,11 +33,14 @@ Route::prefix('admin')->middleware('role:admin')->group(function () {
     // route product
     Route::resource('product', App\Http\Controllers\Backend\ProductController::class);
 
-    // route users
-    Route::resource('users', App\Http\Controllers\Backend\ProductController::class);
+    // route booking
+    Route::resource('booking', App\Http\Controllers\Backend\BookingController::class);
 
     // route orders
     Route::get('orderan', [App\Http\Controllers\Backend\OrderanController::class, 'index'])->name('orderan.index');
+
+    // route booking
+    Route::get('booking', [App\Http\Controllers\Backend\BookingController::class, 'index'])->name('booking.index');
 
     // route reviews
     Route::get('review', [App\Http\Controllers\Backend\ReviewController::class, 'index'])->name('review.index');
@@ -51,6 +54,8 @@ Route::prefix('user')->middleware('role:user')->group(function () {
     Route::post('booking', [App\Http\Controllers\BookingController::class, 'store'])->name('booking.store');
     Route::get('contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
     Route::get('checkout', [App\Http\Controllers\CartController::class, 'index'])->name('checkout');
+    Route::get('aboutus', [App\Http\Controllers\AboutController::class, 'index'])->name('aboutus');
+    Route::get('servicedetails', [App\Http\Controllers\ServiceController::class, 'index'])->name('servicedetails');
 
 });
 

@@ -27,9 +27,10 @@
         </div>
         <div class="container-grd">
             <div class="box">
-                <form action="prosesbooking.php" method="post">
+                <form action="{{ route('booking.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <label>Nama Lengkap</label>
-                    <input type="text" name="nama_lengkap" class="form_book" placeholder="Masukkan Nama Anda">
+                    <input type="text" name="nama" class="form_book" placeholder="Masukkan Nama Anda">
                     <label>Pilih Paket Layanan</label>
                     <select id="layanan" name="paket_layanan" class="layanan" placeholder="Pilih Salah Satu Paket/Layanan">
                         <option value="Paket Dasar">Paket Dasar</option>
@@ -38,7 +39,7 @@
                     </select>
 
                     <label>Metode Pembayaran</label>
-                    <select id="bayar" name="pembayaran" class="bayar" placeholder="Pilih Metode Pembayaran">
+                    <select id="bayar" name="metode_pembayaran" class="bayar" placeholder="Pilih Metode Pembayaran">
                         <option value="Tunai / Langsung">Tunai / Langsung</option>
                         <option value="Transfer Bank">Transfer Bank</option>
                         <option value="Kartu Kredit">Kartu Kredit</option>
