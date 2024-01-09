@@ -9,4 +9,8 @@ class Product extends Model
 {
     use HasFactory;
     protected $guarded;
+    public function pesanan_detail() 
+	{
+	     return $this->hasMany('App\Models\PesananDetails','product_id', 'id');
+	}
 }

@@ -8,8 +8,20 @@
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
             </nav>
-            <a class="nav__links" href="{{ route('checkout') }}">
-                <i class="bi bi-cart text-dark"></i> Cart
+                                <?php
+                                 $pesanan_utama = \App\Models\Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+                                 if(!empty($pesanan_utama))
+                                    {
+                                     $notif = \App\Models\PesananDetails::where('pesanan_id', $pesanan_utama->id)->count(); 
+                                    }
+                                ?>
+                                <a class="nav__links" href="{{ url('checkout') }}">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    @if(!empty($notif))
+                                    <span class="badge badge-danger">{{ $notif }}</span>
+                                    @endif
+                                </a>
+                            </li>
             </a>
             <div class="user-actions">
                 <div class="dropdown">

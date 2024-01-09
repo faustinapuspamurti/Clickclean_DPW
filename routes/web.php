@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/product', [App\Http\Controllers\HomeController::class, 'product'])->name('list.product');
-Route::get('/product/{slug}', [App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
-Route::get('/cart', [App\Http\Controllers\HomeController::class, 'cart'])->name('cart');
-Route::post('/cart', [App\Http\Controllers\HomeController::class, 'add_to_cart'])->name('add_to_cart');
-Route::delete('/cart/{id}', [App\Http\Controllers\HomeController::class, 'destroy_cart_product'])->name('destroy_cart_product');
+Route::get('/productdet/{id}', [App\Http\Controllers\CartController::class, 'index'])->name('productdet');
+Route::post('/checkout/{id}', [App\Http\Controllers\CartController::class, 'store'])->name('checkout');
+
+Route::get('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
+Route::delete('/checkout/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('checkout.delete');
+
+
 
 Auth::routes();
 

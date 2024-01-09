@@ -16,11 +16,11 @@ class ProductController extends Controller
     public function index()
     {
         # membuat variabel untuk menampung data product
-        $data = Product::query()
+        $products = Product::query()
             ->get();
 
         # mengembalikan ke dalam template dengan membawa variabel
-        return view('admin.backend.product.index', compact('data'));
+        return view('admin.backend.product.index', compact('products'));
     }
 
     /**
@@ -94,17 +94,17 @@ class ProductController extends Controller
     public function edit($id)
     {
         # membuat variabel untuk menampung data produk dari where by Id
-        $data = Product::find($id);
+        $products = Product::find($id);
 
         # gunakan if kondisi jika data diatas kosong atau ID tidak sesuai pada database
-        if (empty($data)) {
+        if (empty($products)) {
             # jika data kosong empty() maka 
             return redirect()->route('product.index')->with('galat', 'product not found');
             # fungsi with() adalah untuk membawa notifikasi dengan session yang berupa pemberitahuan
         }
 
         # jika variabel data ada tidak kosong maka kita kembalikan kedalam view edit untuk mengubah data tersebut
-        return view('admin.backend.product.edit', compact('data'));
+        return view('admin.backend.product.edit', compact('products'));
     }
 
     /**
@@ -117,10 +117,10 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         # membuat variabel untuk cek apakah id tersebut ada atau tidak menggunakan find / where by id 
-        $data = Product::find($id);
+        $products = Product::find($id);
 
         # membuat if satu kondisi dimana jika kosong data tersebut akan di kembalikan
-        if (empty($data)) {
+        if (empty($products)) {
             # kembalikan ke halaman list product dengan notifikasi with
             return redirect()->route('product.index')->with('galat', 'product not found');
         }
@@ -148,7 +148,7 @@ class ProductController extends Controller
             # jika da request image / thumbnail maka system akan mengganti gambar tersebut
 
             # gunakan fitur unlink untuk menghapus gambar pada folder penyimpanan kita sesuai dengan nama file pada database
-            unlink(public_path('img/' . $data->image));
+            unlink(public_path('img/' . $products->image));
 
             # jika sudah berhasil menghapus maka kita buat persiapan untuk gambar baru
 
@@ -158,7 +158,7 @@ class ProductController extends Controller
             # gunakan query untuk update data baru kedalam database dengan memanggil model product
 
             # awal query
-            $data->update([
+            $products->update([
                 'title' => $request->title,
                 'harga' => $request->harga,
                 'status' => $request->status,
@@ -175,7 +175,7 @@ class ProductController extends Controller
             # jika tidak ada request image maka memanggil query update dengan model
 
             # awal query
-            $data->update([
+            $products->update([
                 'title' => $request->title,
                 'harga' => $request->harga,
                 'status' => $request->status,
@@ -197,22 +197,22 @@ class ProductController extends Controller
     public function destroy($id)
     {
         # membuat variabel untuk cek apakah id tersebut ada atau tidak menggunakan find / where by id 
-        $data = Product::find($id);
+        $products = Product::find($id);
         // dd($data);
 
         # membuat if satu kondisi dimana jika kosong data tersebut akan di kembalikan
-        if (empty($data)) {
+        if (empty($products)) {
             # kembalikan ke halaman list product dengan notifikasi with
             return redirect()->route('product.index')->with('galat', 'product not found');
         }
 
         # gunakan fitur unlink untuk menghapus gambar pada folder penyimpanan kita sesuai dengan nama file pada database
-        unlink(public_path('img/' . $data->image));
+        unlink(public_path('img/' . $products->image));
 
         # gunakan query delete orm untuk menghapus data pada tabel
 
         # awal query
-        $data->delete();
+        $products->delete();
         # akhir query
 
         # kembalikan hasil controller ini ke halaman list product

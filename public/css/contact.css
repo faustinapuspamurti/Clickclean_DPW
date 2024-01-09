@@ -30,7 +30,8 @@ header {
 
 .nav__links li {
     display: inline-block;
-    padding: 0px 10px;
+    padding: 0px 20px;
+    list-style: none;
 }
 
 .nav__links li a {
@@ -42,7 +43,8 @@ header {
 }
 
 button {
-    padding: 13px 50px;
+    margin-right: -10px;
+    padding: 13px 20px;
     background-color: #FEDF2D;
     border: none;
     border-radius: 5px;

@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->role === 'user';
     }
+
+    public function pesanan() 
+    {
+         return $this->hasMany('App\Models\Pesanan','user_id', 'id');
+    }
 }

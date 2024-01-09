@@ -53,19 +53,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data as $item)
+                                @foreach ($products as $product)
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
-                                        <td class="text-bold-500">{{ $item->title }}</td>
-                                        <td>Rp. {{ number_format($item->harga) }}</td>
+                                        <td class="text-bold-500">{{ $product->title }}</td>
+                                        <td>Rp. {{ number_format($product->harga) }}</td>
                                         <td>
                                             <span
-                                                class="badge {{ $item->status == 'publish' ? 'bg-success' : 'bg-danger' }}">{{ $item->status }}</span>
+                                                class="badge {{ $product->status == 'publish' ? 'bg-success' : 'bg-danger' }}">{{ $product->status }}</span>
                                         </td>
                                         <td class="text-bold-500 d-flex">
-                                            <a href="{{ route('product.edit', $item->id) }}"
+                                            <a href="{{ route('product.edit', $product->id) }}"
                                                 class="btn icon btn-primary me-2"><i class="bi bi-pencil"></i></a>
-                                            <form action="{{ route('product.destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route('product.destroy', $product->id) }}" method="POST">
                                                 @csrf @method('DELETE')
                                                 <button type="submit" class="btn icon btn-danger"><i
                                                         class="bi bi-trash"></i></button>
