@@ -54,7 +54,7 @@
                 <input type="text" name="alamat" class="form_bookadd" placeholder="Masukkan Alamat Anda">
             </div>
             <br></br>
-            <input type="submit" name="submit" value="Konfirmasi Pemesanan" class="button_book">
+            <input type="submit" name="submit" value="Pesan Layanan" class="button_book">
             </form>     
         </div>
         </section>

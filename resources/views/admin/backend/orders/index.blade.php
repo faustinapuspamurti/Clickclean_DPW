@@ -1,6 +1,6 @@
 @extends('layouts.backend.master')
 @section('title')
-    Data Pembelian Product
+    Daftar Product
 @endsection
 
 @section('content')
@@ -13,14 +13,7 @@
                 <div class="card-body">
                     <form action="" method="GET">
                         <div class="row g-3 align-items-center">
-                            <div class="col-md-3">
-                                <label for="invoice" class="form-label">Cari Invoice</label>
-                                <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon1">#</span>
-                                    <input type="text" class="form-control" autocomplete="off" name="invoice">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 <label for="cari" class="form-label">Cari Kata Kunci</label>
                                 <input type="text" name="cari" class="form-control" autocomplete="off" id="cari">
                             </div>
@@ -42,16 +35,32 @@
                             <thead>
                                 <tr>
                                     <th>NO</th>
-                                    <th>INVOICE</th>
-                                    <th>USER</th>
-                                    <th>PRODUK</th>
-                                    <th>HARGA</th>
+                                    <th>ID USER</th>
                                     <th>STATUS</th>
-                                    {{-- <th>ACTION</th> --}}
+                                    <th>KODE</th>
+                                    <th>TOTAL HARGA</th>
+                                    <th>TANGGAL</th>
+                                    <th>ACTION</th>
                                 </tr>
-                            </thead>
+                            </thead>    
                             <tbody>
-                                
+                                @foreach ($pesanans as $pesan)
+                                    <tr>
+                                        <td class="text-center">{{ $loop->iteration }}</td>
+                                        <td class="text-bold-500">{{ $pesan->user_id }}</td>
+                                        <td class="text-bold-500">{{ $pesan->status }}</td>
+                                        <td class="text-bold-500">{{ $pesan->kode }}</td>
+                                        <td>Rp. {{ number_format($pesan->jumlah_harga) }}</td>
+                                        <td class="text-bold-500">{{ $pesan->tanggal }}</td>
+                                        <td class="text-bold-500 d-flex">
+                                            <form action="{{ route('orders.destroy', $pesan->id) }}" method="POST">
+                                                @csrf @method('DELETE')
+                                                <button type="submit" class="btn icon btn-danger"><i
+                                                        class="bi bi-trash"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

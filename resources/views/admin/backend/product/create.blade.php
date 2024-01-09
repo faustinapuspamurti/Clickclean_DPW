@@ -129,7 +129,7 @@
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['table', ['table']],
                 ['insert', ['link']],
-                ['view', ['codeview']]
+                ['view']
             ]
         });
     </script>

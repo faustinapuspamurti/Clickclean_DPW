@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/product', [App\Http\Controllers\HomeController::class, 'product'])->name('list.product');
+Route::get('/orders', [App\Http\Controllers\Backend\OrderanController::class, 'index'])->name('orders.index');
+Route::delete('/orders/{id}', [App\Http\Controllers\Backend\OrderanController::class, 'destroy'])->name('orders.destroy');
 Route::get('/productdet/{id}', [App\Http\Controllers\CartController::class, 'index'])->name('productdet');
 Route::post('/checkout/{id}', [App\Http\Controllers\CartController::class, 'store'])->name('checkout');
 
