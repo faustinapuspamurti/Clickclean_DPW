@@ -6,7 +6,7 @@
         <title>Booking | Clickclean</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ asset('css/booking.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/checkout.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <body>
@@ -20,7 +20,7 @@
         </div>
     </section>
                     @if(!empty($pesanan))
-                    <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
+                    <p align="left">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
                     <table class="table table-striped">
                         <thead>
                             <tr>

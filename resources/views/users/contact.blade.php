@@ -33,8 +33,8 @@
                     <img src="{{ asset('images/address.png') }}" class="bx" alt="">
                     <h3>Alamat</h3>
                     <p>Clickclean Company Center,</p>
-                    <p>Jln. Soedirman No.450</p>
-                    <p>Jakarta, Indonesia</p>
+                    <p>Jln. DI Panjaitan 128</p>
+                    <p>Purwokerto, Indonesia</p>
                 </div>
                 <div class="box">
                     <img src="{{ asset('images/workhour.png') }}" class="bx" alt="">
@@ -48,7 +48,7 @@
 
     <section id="map">
         <div class="foto-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.266513813553!2d106.79777681431028!3d-6.228551362731653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14600e6df87%3A0x918cf99888f7fa28!2sJl.%20Jend.%20Sudirman%20No.450%2C%20RT.1%2FRW.3%2C%20Gelora%2C%20Kecamatan%20Tanah%20Abang%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2010270!5e0!3m2!1sid!2sid!4v1637861330270!5m2!1sid!2sid" width="1290" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2708044740025!2d109.24651767355269!3d-7.435257773251079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655ea49d9f9885%3A0x62be0b6159700ec9!2sInstitut%20Teknologi%20Telkom%20Purwokerto!5e0!3m2!1sid!2sid!4v1704771850591!5m2!1sid!2sid" width="1290" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
     @include('layouts.footer')

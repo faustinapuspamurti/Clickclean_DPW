@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600&display=swap');
+
+li, a, button {
+    font-family: Nunito Sans;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+}
+
+.logo {
+    cursor: pointer;
+    width: 170px;
+    height: 60px; 
+}
+
+.nav__links {
+    list-style: none;
+    margin-right: -100px;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 20px;
+    list-style: none;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: #FEDF2D
+}
+
+button {
+    margin-right: -10px;
+    padding: 13px 20px;
+    background-color: #FEDF2D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s; 
+}
+
+.banner {
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.banner::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0636679a;
+}
+
+.content-area {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.content {
+    text-align: center;
+}
+
+.content h1 {
+    font-family: Nunito Sans;
+    font-size: 48px;
+    font-weight: bolder;
+    color: #FFFFFF;
+    z-index: 1;
+}
+
+.content p {
+    font-family: Nunito Sans;
+    font-size: 16px;
+    color: #FAFAFA;
+    z-index: 1;
+    margin-top: -20px;
+}
+
+.title h2{
+    margin-top: 80px;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-weight: 800;
+    font-size: 32px;
+    z-index: 1;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #063667;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background-color: #FF0000;
+}
+
+.btn-success {
+    background-color: #32CD32;
+}
