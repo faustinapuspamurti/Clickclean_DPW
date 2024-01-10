@@ -115,19 +115,10 @@ class CartController extends Controller
     {
         $user = User::where('id', Auth::user()->id)->first();
 
-        if(empty($user->alamat))
-        {
-            Alert::error('Identitasi Harap dilengkapi', 'Error');
-            return redirect('home');
+        if(empty($pesanan)) {
+            return redirect()->route('users.checkout')->with('error', 'Tidak ada pesanan yang ditemukan');
         }
 
-        if(empty($user->email))
-        {
-            Alert::error('Identitasi Harap dilengkapi', 'Error');
-            return redirect('home');
-        }
-
-        $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
         $pesanan_id = $pesanan->id;
         $pesanan->status = 1;
         $pesanan->update();
@@ -135,7 +126,5 @@ class CartController extends Controller
         session()->forget('pesanan');
 
         return redirect()->route('users.checkout')->with('success', 'Pesanan Anda telah berhasil!');
-
     }
-
 }

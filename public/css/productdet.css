@@ -58,24 +58,41 @@ li,a,button {
     text-decoration: none;
 }
 
-/* ... (Gaya CSS lainnya) ... */
+.container {
+    padding: 20px;
+    margin-top: 35px;
+}
 
-.product-image {
-    width: 50%;
-    display: block;
+.product-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.product-image img {
+    width: 500px; /* Sesuaikan ukuran gambar */
     border-radius: 5px;
+    margin-right: 20px; /* Beri jarak antara gambar dan detail produk */
 }
 
 .product-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    flex: 1;
+    margin-top: 90px;
+    font-size: 20px;
+    font-family: Nunito Sans;
+    padding-left: 50px;
+}
+
+.product-details form label {
+    flex: 0 0 30%;
+    text-align: right;
+    margin-right: 10px;
 }
 
 .product-table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px; /* Beri jarak di atas tabel */
 }
 
 .product-label {
@@ -95,13 +112,17 @@ li,a,button {
 }
 
 .product-input {
-    width: calc(100% - 40px); /* Adjust as needed */
+    width: calc(70% - 40px); /* Sesuaikan lebar form input */
     padding: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.product-button {
+
+.btn-primary {
     padding: 10px 20px;
+    width: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .section-footer{

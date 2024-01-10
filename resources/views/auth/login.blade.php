@@ -21,5 +21,14 @@
                 <label>Don't have an account? <a href="{{ route('register') }}" id="signup">SIGN UP</a></label>
             </center>
         </form>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        </div>
+        @endif
     </div>
 @endsection

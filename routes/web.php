@@ -21,7 +21,8 @@ Route::post('/checkout/{id}', [App\Http\Controllers\CartController::class, 'stor
 
 Route::get('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
 Route::delete('/checkout/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('checkout.delete');
-
+Route::get('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('users.checkout');
+Route::get('/checkout/konfirmasi', [App\Http\Controllers\CartController::class, 'konfirmasi'])->name('users.konfirmasi');
 
 
 Auth::routes();

@@ -115,6 +115,7 @@ button {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    font-family: Nunito Sans;
 }
 
 .table th,
