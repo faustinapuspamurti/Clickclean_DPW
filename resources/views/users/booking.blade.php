@@ -33,17 +33,20 @@
                     <input type="text" name="nama" class="form_book" placeholder="Masukkan Nama Anda">
                     <label>Pilih Paket Layanan</label>
                     <select id="layanan" name="paket_layanan" class="layanan" placeholder="Pilih Salah Satu Paket/Layanan">
+                        <option>-</option>
                         <option value="Paket Dasar">Paket Dasar</option>
                         <option value="Paket Standar">Paket Standar</option>
                         <option value="Paket Super">Paket Super</option>
                     </select>
 
-                    <label>Metode Pembayaran</label>
-                    <select id="bayar" name="metode_pembayaran" class="bayar" placeholder="Pilih Metode Pembayaran">
-                        <option value="Tunai / Langsung">Tunai / Langsung</option>
-                        <option value="Transfer Bank">Transfer Bank</option>
-                        <option value="Kartu Kredit">Kartu Kredit</option>
-                        <option value="Direct Debit">Direct Debit</option>
+                    <label>Jangkauan Kota</label>
+                    <select id="area" name="wilayah" class="area" placeholder="Jangkauan Kota">
+                        <option>-</option>
+                        <option value="Banyumas">Banyumas</option>
+                        <option value="Purbalingga">Purbalingga</option>
+                        <option value="Banjarnagara">Banjarnegara</option>
+                        <option value="Cilacap">Cilacap</option>
+                        <option value="Kebumen">Kebumen</option>
                     </select>
             </div>
             <div class="box">

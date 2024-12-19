@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/homenologin', [App\Http\Controllers\HomeController::class, 'index'])->name('homenologin');
 Route::get('/product', [App\Http\Controllers\HomeController::class, 'product'])->name('list.product');
 Route::get('/orders', [App\Http\Controllers\Backend\OrderanController::class, 'index'])->name('orders.index');
 Route::delete('/orders/{id}', [App\Http\Controllers\Backend\OrderanController::class, 'destroy'])->name('orders.destroy');
@@ -23,13 +24,15 @@ Route::get('/checkout', [App\Http\Controllers\CartController::class, 'checkout']
 Route::delete('/checkout/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('checkout.delete');
 Route::get('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('users.checkout');
 Route::get('/checkout/konfirmasi', [App\Http\Controllers\CartController::class, 'konfirmasi'])->name('users.konfirmasi');
-
+Route::get('/invoice', [App\Http\Controllers\CartController::class, 'invoice'])->name('users.invoice');
+Route::post('/midtrans-callback', [App\Http\Controllers\CartController::class, 'callback']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Auth::routes();
 
 Route::get('/', function () {
-    return redirect()->route('login');
-});
+    return view('homenologin');
+})->name('homenologin');
 
 Route::prefix('admin')->middleware('role:admin')->group(function () {
 
@@ -62,7 +65,6 @@ Route::prefix('user')->middleware('role:user')->group(function () {
     Route::get('checkout', [App\Http\Controllers\CartController::class, 'index'])->name('checkout');
     Route::get('aboutus', [App\Http\Controllers\AboutController::class, 'index'])->name('aboutus');
     Route::get('servicedetails', [App\Http\Controllers\ServiceController::class, 'index'])->name('servicedetails');
-
 });
 
 Auth::routes();

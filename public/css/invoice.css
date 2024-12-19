@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600&display=swap');
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1, h3 {
+    font-weight: 600;
+    color: #063667;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.card {
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.bg-primary {
+    background-color: #063667;
+}
+
+.card-header {
+    color: #fff;
+    padding: 15px;
+}
+
+.card-body {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.card-body p {
+    font-size: 16px;
+    color: #333;
+}
+
+.card-body strong {
+    font-weight: 600;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table th, .table td {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.table th {
+    background-color: #063667;
+    color: white;
+    font-weight: 600;
+}
+
+.table td {
+    background-color: #fff;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.table td strong {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#pay-button {
+    background-color: #FEDF2D;
+    padding: 15px 30px;
+    border: none;
+    text-decoration: none;
+    color: #000000;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#pay-button i {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .table th, .table td {
+        font-size: 14px;
+    }
+
+    #pay-button {
+        padding: 12px 25px;
+    }
+}

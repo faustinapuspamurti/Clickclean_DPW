@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->enum('paket_layanan', ['Paket Dasar', 'Paket Standar', 'Paket Super']);
-            $table->enum('metode_pembayaran', ['Tunai / Langsung', 'Transfer Bank', 'Kartu Kredit', 'Direct Debit']);
+            $table->enum('wilayah', ['Banyumas', 'Purbalingga', 'Banjarnegara', 'Cilacap', 'Kebumen']);
             $table->string('no_hp');
             $table->string('alamat');
             $table->timestamps();

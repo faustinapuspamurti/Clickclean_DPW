@@ -31,7 +31,7 @@
                 </div>
                 <div class="box">
                     <img src="{{ asset('images/address.png') }}" class="bx" alt="">
-                    <h3>Alamat</h3>
+                    <h3>Kantor Pusat</h3>
                     <p>Clickclean Company Center,</p>
                     <p>Jln. DI Panjaitan 128</p>
                     <p>Purwokerto, Indonesia</p>

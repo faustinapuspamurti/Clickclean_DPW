@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->date('tanggal');
-            $table->string('status');
+            $table->enum('status', ['Unpaid', 'Paid']);
             $table->integer('kode');
             $table->integer('jumlah_harga');
             $table->timestamps();
