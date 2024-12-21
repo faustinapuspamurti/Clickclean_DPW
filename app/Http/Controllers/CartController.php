@@ -121,70 +121,59 @@ class CartController extends Controller
     }
 
     // Menampilkan halaman invoice
-    public function invoice()
+    public function invoice($id = null)
     {
-        // Ambil data pesanan terbaru dengan status 'unpaid'
-        $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status', 'unpaid')->latest()->first();
+        if ($id === null) {
+            // Jika $id tidak disediakan, gunakan logika untuk menampilkan invoice terbaru
+            $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status', 'Unpaid')->latest()->first();
+            
+            if (empty($pesanan)) {
+                return redirect('checkout')->with('error', 'Tidak ada pesanan yang dapat ditampilkan');
+            }
 
-        if (empty($pesanan)) {
-            return redirect('checkout')->with('error', 'Tidak ada pesanan yang dapat ditampilkan');
-        }
-
-        $pesanan->status = 'unpaid';
-        $pesanan->update();
-
-        // Ambil detail pesanan
-        $pesanan_details = PesananDetails::where('pesanan_id', $pesanan->id)->get();
-
-        // Set your Merchant Server Key
-        \Midtrans\Config::$serverKey = config('midtrans.server_key');
-        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = config('midtrans.is_production');
-        // Set sanitization on (default)
-        \Midtrans\Config::$isSanitized = true;
-        // Set 3DS transaction for credit card to true
-        \Midtrans\Config::$is3ds = true;
-
-        $params = array(
-            'transaction_details' => array(
-                'order_id' => $pesanan->id . '-' . time(), // Tambahkan timestamp agar unik
-                'gross_amount' => $pesanan->jumlah_harga,
-            ),
-            'customer_details' => array(
-                'name' => Auth::user()->name,
-            ),
-        );
-        
-        $snapToken = \Midtrans\Snap::getSnapToken($params);
-
-        return view('users.invoice', compact('snapToken', 'pesanan', 'pesanan_details'));
-    }
-
-    // Menampilkan halaman invoice setelah pembayaran berhasil
-    public function callback(Request $request)
-    {
-        $serverKey = config('midtrans.server_key');
-        $calculated_signature = hash("sha512", $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
-        
-        if ($calculated_signature !== $request->signature_key) {
-            \Log::error('Invalid Signature Key');
-            return response()->json(['message' => 'Invalid signature'], 403);
-        }
-        $order_id_parts = explode('-', $request->order_id);
-        $pesanan_id = $order_id_parts[0];
-        $pesanan = Pesanan::find($pesanan_id);
-
-        if (!$pesanan) {
-            \Log::error('Pesanan not found for order_id: ' . $request->order_id);
-            return response()->json(['message' => 'Order not found'], 404);
-        }
-
-        if (in_array($request->transaction_status, ['capture', 'settlement'])) {
-            $pesanan->status = 'paid';
+            $pesanan->status = 'Unpaid';
             $pesanan->update();
-            \Log::info('Pesanan ID ' . $pesanan_id . ' status updated to paid');
-        }
 
-        return response()->json(['message' => 'Callback processed successfully'], 200);
+            // Ambil detail pesanan
+            $pesanan_details = PesananDetails::where('pesanan_id', $pesanan->id)->get();
+
+            // Set your Merchant Server Key
+            \Midtrans\Config::$serverKey = config('midtrans.server_key');
+            // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+            \Midtrans\Config::$isProduction = config('midtrans.is_production');
+            // Set sanitization on (default)
+            \Midtrans\Config::$isSanitized = true;
+            // Set 3DS transaction for credit card to true
+            \Midtrans\Config::$is3ds = true;
+
+            $params = array(
+                'transaction_details' => array(
+                    'order_id' => $pesanan->id . '-' . time(),
+                    'gross_amount' => $pesanan->jumlah_harga,
+                ),
+                'customer_details' => array(
+                    'name' => Auth::user()->name,
+                ),
+            );
+
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
+
+            return view('users.invoice', compact('snapToken', 'pesanan', 'pesanan_details'));
+        } else {
+            // Jika $id disediakan, gunakan logika untuk menampilkan invoice berdasarkan ID
+            $pesanan = Pesanan::find($id);
+            return view('invoice', compact('pesanan'));
+        }
+    }
+    // Menampilkan halaman invoice setelah pembayaran berhasil
+    public function callback(Request $request){
+        $serverKey = config('midtrans.server_key');
+        $hashed = hash("sha512", $request->pesanan_id.$request->status_code.$request->gross_amount.$serverKey);
+        if($hashed == $request->signature_key){
+            if($request->transaction_status == 'capture' or $request->transaction_status == 'settlement'){
+                $pesanan = Pesanan::find($request->pesanan_id);
+                $pesanan->update(['status' => 'Paid']);
+            }
+        }
     }
 }
