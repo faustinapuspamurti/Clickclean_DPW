@@ -26,13 +26,6 @@
         </li>
 
         <li class="sidebar-title">Pemesanan</li>
-
-        <li class="sidebar-item {{ (request()->is('v1/booking*')) ? 'active' : '' }}">
-            <a href="{{ route('booking.index')}}" class='sidebar-link'>
-                <i class="bi bi-cart-fill"></i>
-                <span>Data Pemesanan</span>
-            </a>
-        </li>
         <li class="sidebar-item {{ (request()->is('v1/orderan*')) ? 'active' : '' }}">
             <a href="{{ route('orderan.index')}}" class='sidebar-link'>
                 <i class="bi bi-cart-fill"></i>

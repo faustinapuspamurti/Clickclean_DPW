@@ -92,8 +92,6 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end shadow-lg"
                                     aria-labelledby="topbarUserDropdown" style="">
-                                    <li><a class="dropdown-item" href="#">My Account</a></li>
-                                    <li><a class="dropdown-item" href="#">Settings</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -119,7 +117,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>2023 &copy; Clickclean Kelompok 2 </p>
+                        <p>2024 &copy; Clickclean Kelompok 5 </p>
                     </div>
                 </div>
             </footer>

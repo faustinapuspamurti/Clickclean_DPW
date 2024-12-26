@@ -25,6 +25,7 @@ Route::delete('/checkout/{id}', [App\Http\Controllers\CartController::class, 'de
 Route::get('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('users.checkout');
 Route::get('/checkout/konfirmasi', [App\Http\Controllers\CartController::class, 'konfirmasi'])->name('users.konfirmasi');
 Route::get('/invoice', [App\Http\Controllers\CartController::class, 'invoice'])->name('users.invoice');
+Route::get('/invoice2', [App\Http\Controllers\CartController::class, 'invoice2'])->name('invoice2');
 Route::post('/midtrans-callback', [App\Http\Controllers\CartController::class, 'callback']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
